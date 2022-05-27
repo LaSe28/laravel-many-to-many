@@ -29,7 +29,7 @@
             @endforeach
         </div>
         <div class="list-group col-6">
-            <h3 class="my-4">Altri post della categoria "{{$post->category->name}}" </h3>
+            <h3 class="my-4">Post simili</h3>
             @foreach ($categoryPosts as $ele)
             <a href="{{route('admin.posts.show', $ele->slug)}}" class="
                 @if (url()->current() === 'http://localhost:8000/admin/posts/' . $ele->slug) active @endif
@@ -44,21 +44,6 @@
             @endforeach
         </div>
     </div>
-    {{-- <div>
-        <h3 class="my-4">Altri post della categoria "{{$post->category->name}}" </h3>
-        <div class="row justify-content-center">
-            @foreach ($categoryPosts as $ele)
-            @if (url()->current() !== 'http://localhost:8000/admin/posts/' . $ele->slug)
-            <div class="card mx-4 my-5" style="width: 15rem;">
-                <div class="card-title">{{$ele->title}}</div>
-                <div class="card-text my-3">Aggiunto il: {{date('d-m-Y', strtotime($ele->created_at))}}</div>
-                <div class="card-text my-3">{{$ele->category->name}}</div>
-                <a href="{{route('admin.posts.show', $ele->slug)}}" class="col-3 align-self-end btn btn-primary">Apri</a>
-            </div>
-            @endif
-            @endforeach
-        </div>
-    </div> --}}
 </div>
 <div class="d-none" id="popup">
     <div class="message">
